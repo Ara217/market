@@ -3,5 +3,36 @@
     text-decoration: none;
 }
 
+.shadow {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: none;
+    z-index: 99999;
+    position: fixed;
+    top: 0px;
+}
+
+.shadow .popup_container {
+    margin: 40px auto 0px auto;
+    width: 320px;
+    height: 98px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000
+}
+
+.popup_container>div{
+    text-align: center;
+}
+.buttons {
+
+}
+
+
+
+
 
 

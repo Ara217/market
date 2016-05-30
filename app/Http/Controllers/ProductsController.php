@@ -19,7 +19,7 @@ class ProductsController extends Controller
     {
 
         $productsAll = Product::latest('created_at')->get();
-        return view('product', compact('productsAll'));
+        return view('products.index', compact('productsAll'));
     }
 
     public function create()

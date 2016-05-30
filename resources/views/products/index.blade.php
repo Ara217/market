@@ -6,6 +6,15 @@
 @stop
 
 @section('content')
+    <div class="shadow">
+        <div class="popup_container">
+            <p class="text-center">Are you sure you want to delete this product?</p>
+            <div class="col-md-10 col-md-offset-1">
+                <button class="btn btn-danger confirm-delete-product">Yes</button>
+                <button class="btn btn-info confirm-delete-product-no">No</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

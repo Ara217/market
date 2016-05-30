@@ -11,13 +11,13 @@
                     {!! Form::open(['action' => 'ProductsController@store'])!!}
 
                     {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title']) !!}
-                    {{ $errors->first('title') }}
+                    {!! $errors->first('title','<div class="alert alert-danger" role="alert">:message</div>') !!}
 
                     {!! Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'Description']) !!}
-                    {{ $errors->first('description') }}
+                    {!! $errors->first('description','<div class="alert alert-danger" role="alert">:message</div>') !!}
 
                     {!! Form::number('price', null, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
-                    {{ $errors->first('price') }}
+                    {!! $errors->first('price','<div class="alert alert-danger" role="alert">:message</div>') !!}
 
                     {!! Form::submit('addProduct', ['class' => 'btn btn-default', 'Value' => 'Add Product']) !!}
 
