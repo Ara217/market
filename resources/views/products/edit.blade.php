@@ -8,7 +8,7 @@
                     <div class="panel-heading">
                         <feildset class="form-group">
                             <legend>Registration</legend>
-                            {!! Form::open(array('method' => 'PATCH', 'action' => array('ProductsController@update', $product->id)))!!}
+                            {!! Form::model($product, array('method' => 'PATCH', 'action' => array('ProductsController@update', $product->id)))!!}
 
                             {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'title']) !!}
                             {{ $errors->first('title') }}

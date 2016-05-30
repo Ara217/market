@@ -10,13 +10,13 @@
                 <div class="col-md-12">
                     {!! Form::open(['action' => 'ProductsController@store'])!!}
 
-                    {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'title']) !!}
+                    {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title']) !!}
                     {{ $errors->first('title') }}
 
-                    {!! Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'description']) !!}
+                    {!! Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => 'Description']) !!}
                     {{ $errors->first('description') }}
 
-                    {!! Form::number('price', null, ['class' => 'form-control', 'placeholder' => 'price']) !!}
+                    {!! Form::number('price', null, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
                     {{ $errors->first('price') }}
 
                     {!! Form::submit('addProduct', ['class' => 'btn btn-default', 'Value' => 'Add Product']) !!}

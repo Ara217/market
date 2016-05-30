@@ -9,17 +9,23 @@ use Illuminate\Support\Facades\Session;
 
 class ProductsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'index']);
+    }
+
     public function index ()
     {
 
-        $productsAll = Product::all();
-        return view('Market')->with('ProductList', $productsAll);
+        $productsAll = Product::latest('created_at')->get();
+        return view('product', compact('productsAll'));
     }
 
     public function create()
     {
 
-        return view('Add');
+        return view('products.add');
     }
 
     public function store (ProductsRequest $request)
@@ -33,7 +39,7 @@ class ProductsController extends Controller
     {
 
         $chosenProduct = Product::findOrFail($id);
-        return view('ProductPage',compact('chosenProduct'));
+        return view('products.view',compact('chosenProduct'));
     }
     
 
@@ -41,7 +47,7 @@ class ProductsController extends Controller
     {
         
         $product = Product::findOrFail($id);
-        return view('Edit', compact('product'));
+        return view('products.edit', compact('product'));
     }
     
     
@@ -56,7 +62,9 @@ class ProductsController extends Controller
 
     public function destroy ($id)
     {
-        $productUpdate = Product::findOrFail($id);
         
+        $productDelete = Product::findOrFail($id);
+        $delete = $productDelete->delete();
+        return response()->json(['success' => $delete]);
     }
 }

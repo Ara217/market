@@ -24,8 +24,9 @@ class ProductsRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required'
+            'title' => 'required|min:3',
+            'description' => 'required',
+            'price' => 'required|numeric'
         ];
     }
 }
