@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-12">
                     {!! Form::open(['action' => 'ProductsController@store'])!!}
-                        @include('products.form', ['submitButton' => 'Add Product'])
+                        @include('products._form', ['submitButton' => 'Add Product'])
                     {!! Form::close() !!}
                 </div>
         </div>

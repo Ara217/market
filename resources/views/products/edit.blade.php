@@ -9,7 +9,7 @@
                         <feildset class="form-group">
                             <legend>Registration</legend>
                             {!! Form::model($product, array('method' => 'PATCH', 'action' => array('ProductsController@update', $product->id)))!!}
-                                @include('products.form', ['submitButton' => 'Update Product'])
+                                @include('products._form', ['submitButton' => 'Update Product'])
                             {!! Form::close() !!}
                         </feildset>
                     </div>
