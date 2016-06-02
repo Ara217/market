@@ -18,7 +18,5 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-
 Route::resource('/market', 'ProductsController');
-
-
+Route::post('/market/comment/{id}', 'ProductsController@comment');
