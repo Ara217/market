@@ -13,7 +13,6 @@
                             {!! Form::close() !!}
                         </feildset>
                     </div>
-
                 </div>
             </div>
         </div>
