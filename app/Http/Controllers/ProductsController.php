@@ -77,7 +77,7 @@ class ProductsController extends Controller
         $comment = ProductsComments::create($request->all());
         
         if($comment){
-
+ 
             $info = array(
               'name' => $request['name'],
               'email' => $request['email']
@@ -88,18 +88,12 @@ class ProductsController extends Controller
                   $message->to($request['email']);
               };
 
-            $result = Mail::send('email._comment', $info, $mail);
+            //$result = Mail::send('email._comment', $info, $mail);
             //its work just enter you gmail,password and change configs, allow access for laravel
 
             $response = ProductsComments::latest('created_at')->where('product_id', '=', $request['product_id'])->first();
             $response = json_encode($response);
             return response()->json(['data' => $response]);
-
-
         }
-
-
-
-        
     }
 }

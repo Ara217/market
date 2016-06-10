@@ -18,7 +18,14 @@
                         <button class="btn btn-info">
                             Edit
                         </button>
-                    </a><br>
+                    </a>
+                    {!! Form::hidden('id', $chosenProduct["id"], ['class' => 'form-control']) !!}
+                    {!! Form::hidden('title', $chosenProduct["title"], ['class' => 'form-control']) !!}
+                    {!! Form::hidden('price', $chosenProduct["price"], ['class' => 'form-control']) !!}
+                    {!! Form::hidden('_token', 'token', ['id' => 'token', 'data-value-buy' => csrf_token()]) !!}
+                    <button id='buyButton' class='btn btn-info btn-buy' title="Add to cart">
+                        Buy
+                    </button>
                 @endif
             </div>
             <div class="col-md-10 col-md-offset-1" id="form_block">

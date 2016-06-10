@@ -7,10 +7,11 @@ $(document).ready(function (){
             var $re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
             var $error = false;
             var $id = $(event.target).closest($formSelector);
-            var $input = $id.find("input:not([name='_token']):not([name='product_id']), textarea, select");//or not:([],[])
+            var $input = $id.find("input:not([name='_token']):not([id='hidden']), textarea, select");//or not:([],[])
             $.each($input, function(key, value){
                 //if all value is true each return $error = true else false
                 var $alert = value.name;
+                console.log($alert);
                 var $errorDiv = $("div[data-id=" + $alert + "]");
                 if (value.value === "") {
                     
@@ -30,7 +31,8 @@ $(document).ready(function (){
             });
             
             return $error;
-        }//add
+            
+        };//add
     }(jQuery));
 });
 

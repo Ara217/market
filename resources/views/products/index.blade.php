@@ -52,7 +52,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        {{$product["price"]}}
+                                        {{$product["price"] . "$"}}
                                     </td>
                                     <td>
                                         {{$product["created_at"]}}
