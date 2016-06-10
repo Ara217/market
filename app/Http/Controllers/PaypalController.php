@@ -57,6 +57,12 @@ class PaypalController extends Controller
         return redirect('/market');
     }
 
+    /**
+     * Remove products from card by given $request
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function removeFromCart (Request $request)
     {
 
@@ -68,7 +74,7 @@ class PaypalController extends Controller
                     'count' => Cart::instance('shopping')->count(),
                     'total' => Cart::instance('shopping')->total()]
             );
-        };//????????????????????????
+        };
     }
 
     public function getCheckout (Request $request)//????????????????????????
