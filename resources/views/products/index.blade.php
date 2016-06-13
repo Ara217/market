@@ -33,40 +33,33 @@
                     <div class="panel-heading">
                         <p class="lead">Products list</p>
                         <table class="table table-striped">
-                            <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Price</th>
-                                <th>Created_at</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
                             @foreach($productsAll as $product)
                                 <tr id="main_div_{{$product["id"]}}">
-                                    <td>
+                                    <td class="">
                                         {{$product["id"]}}
                                     </td>
                                     <td>
-                                        <a href="market/{{$product["id"]}}">
-                                            {{ $product["title"] }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        {{$product["price"] . "$"}}
-                                    </td>
-                                    <td>
-                                        {{$product["created_at"]}}
-                                    </td>
-                                    <td>
-                                        <a href="/market/{{$product["id"]}}/edit" class="edit">
-                                            <button class="btn btn-info">Edit</button>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-                                        <button class="btn btn-danger delete-product" data-id="{{$product["id"]}}">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </button>
+                                        <div class="imageDiv">
+                                            <img src="/" alt="">
+                                        </div>
+                                        <div class="infoDiv">
+                                            <a href="market/{{$product["id"]}}">
+                                                {{ $product["title"] }}
+                                            </a>
+                                            <p>
+                                                Description: {{ $product["description"] }}
+                                            </p>
+                                            <p>
+                                                Price: {{$product["price"] . "$"}}
+                                            </p>
+                                            <a href="/market/{{$product["id"]}}/edit" class="edit">
+                                                <button class="btn btn-info">Edit</button>
+                                            </a>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+                                            <button class="btn btn-danger delete-product" data-id="{{$product["id"]}}">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

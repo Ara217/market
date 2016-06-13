@@ -46,6 +46,11 @@
                                 </tr>
                             @endforeach
                         </table>
+                        @if(Session::has('errorSelectProducts'))
+                            <div class="alert alert-danger">
+                                <li>{{ Session::get('errorSelectProducts') }}</li>
+                            </div>
+                        @endif
                         <hr>
                         {!! Form::submit('ORDER', ['id' => 'buyButton', 'class' => 'btn btn-info']) !!}
                         {!! Form::close() !!}

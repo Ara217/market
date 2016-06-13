@@ -11,21 +11,27 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 @if(isset($chosenProduct))
-                    <h2>{{ $chosenProduct["title"] }}</h2>
-                    <p>{{"Description: " . $chosenProduct["description"] }}</p>
-                    <p>{{"Price: " . $chosenProduct["price"] . "$" }}</p>
-                    <a href="{{$chosenProduct["id"]}}/edit">
-                        <button class="btn btn-info">
-                            Edit
+                    <div class="productImageBlock">
+
+                        <img src="/{{$original . $chosenProduct["image_path"]}}" alt="">
+                    </div>
+                    <div class="productInfoBlcok">
+                        <h2>{{ $chosenProduct["title"] }}</h2>
+                        <p>{{"Description: " . $chosenProduct["description"] }}</p>
+                        <p>{{"Price: " . $chosenProduct["price"] . "$" }}</p>
+                        <a href="{{$chosenProduct["id"]}}/edit">
+                            <button class="btn btn-info">
+                                Edit
+                            </button>
+                        </a>
+                        {!! Form::hidden('id', $chosenProduct["id"], ['class' => 'form-control']) !!}
+                        {!! Form::hidden('title', $chosenProduct["title"], ['class' => 'form-control']) !!}
+                        {!! Form::hidden('price', $chosenProduct["price"], ['class' => 'form-control']) !!}
+                        {!! Form::hidden('_token', 'token', ['id' => 'token', 'data-value-buy' => csrf_token()]) !!}
+                        <button id='buyButton' class='btn btn-info btn-buy' title="Add to cart">
+                            Add to cart
                         </button>
-                    </a>
-                    {!! Form::hidden('id', $chosenProduct["id"], ['class' => 'form-control']) !!}
-                    {!! Form::hidden('title', $chosenProduct["title"], ['class' => 'form-control']) !!}
-                    {!! Form::hidden('price', $chosenProduct["price"], ['class' => 'form-control']) !!}
-                    {!! Form::hidden('_token', 'token', ['id' => 'token', 'data-value-buy' => csrf_token()]) !!}
-                    <button id='buyButton' class='btn btn-info btn-buy' title="Add to cart">
-                        Buy
-                    </button>
+                    </div>
                 @endif
             </div>
             <div class="col-md-10 col-md-offset-1" id="form_block">
