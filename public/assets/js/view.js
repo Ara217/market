@@ -2,7 +2,7 @@ $(document).ready(function() {
 
    $("#comment_send").on("click", function (event) {
       $error = $("#comment_send").valid(event,'#form_block');//first argument is event, second is parent form or div selector
-      if($error == false) {
+      if ($error == false) {
          addComment();
       } else {
          return false;
@@ -51,7 +51,7 @@ $(document).ready(function() {
             _token: $buyToken
          },
          success: function () {
-            $("#buyButton").html("<img src='/assets/images/cart.png'>");
+            $("#buyButton").html("<img src='/assets/images/Site_images/cart.png'>");
             /*$(".buyButtonSpan").css({
                 "-webkit-transform" : "translateX(200%)",
                "-moz-transform" : "translateX(200%)",

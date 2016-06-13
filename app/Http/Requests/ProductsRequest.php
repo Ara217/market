@@ -26,7 +26,9 @@ class ProductsRequest extends Request
         return [
             'title' => 'required|min:3',
             'description' => 'required',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'count' => 'required|numeric',
+            'image' => 'required|image'
         ];
     }
 }

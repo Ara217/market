@@ -27,8 +27,22 @@
 .popup_container>div{
     text-align: center;
 }
+
+
 .buttons {
 
+}
+
+.imageDiv {
+    width: 160px;
+    height: 160px;
+    float: left;
+}
+
+.infoDiv {
+    width: 160px;
+    height: 250px;
+    float: left;
 }
 
 

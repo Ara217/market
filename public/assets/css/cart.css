@@ -1,4 +1,11 @@
-
 .floatRight {
     float: right;!important;
+}
+
+.h2 {
+    float: left;
+}
+
+.deleteButton {
+    float: right;
 }

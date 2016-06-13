@@ -2,9 +2,20 @@
     display: none;
 }
 
+.productImageBlock {
+    width: 256px;
+    height: 256px;
+    float: left;
+}
+
+.productInfoBlcok {
+    width: 220px;
+    height: 160px;
+    float: left;
+}
+
 .btn-buy {
     height: 34px;
-    width: 60px;
     line-height: 20px;
     /*overflow: hidden;
     -webkit-backface-visibility: hidden;
